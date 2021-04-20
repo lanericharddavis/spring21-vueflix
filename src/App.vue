@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/main.scss"
 
 .img-logo {
   height: .75em;

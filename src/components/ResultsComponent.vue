@@ -1,10 +1,7 @@
 <template>
   <div class="Results">
-    <ul>
-      <li v-for="movie in state.results" :key="movie.id" @click="setActive(movie)">
-        {{movie.title}}
-      </li>
-    </ul>
+    <!-- NOTE to pass prop data to a child component it is passed as a bound attribute -->
+    <MediaElement v-for="movie in state.results" :key="movie.id" :movie="movie" @click="setActive(movie)"/>
   </div>
 </template>
 
@@ -12,6 +9,8 @@
 import { computed, reactive } from 'vue'
 import { AppState } from '../AppState'
 import { moviesService } from '../services/MoviesService'
+import MediaElement from './MediaElementComponent'
+
 export default {
   name: 'results',
   setup() {
@@ -25,7 +24,9 @@ export default {
       }
     }
   },
-  components: {}
+  components: {
+    MediaElement
+  }
 }
 </script>
 
