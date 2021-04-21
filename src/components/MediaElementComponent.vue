@@ -1,10 +1,10 @@
 <template>
 <div class="media">
-  <img src="//placehold.it/75x75" class="mr-3" alt="Movie poster">
+  <img :src="movie.poster" class="mr-3 smPoster" alt="Movie poster">
   <div class="media-body">
     <h5 class="mt-0">{{movie.title}}</h5>
-    <p>{{movie.popularity}}</p>
-    <p>{{movie.releaseDate}}</p>
+    <p>Popularity: {{movie.popularity}}</p>
+    <p>Release Date: {{movie.releaseDate}}</p>
   </div>
 </div>
 </template>
@@ -32,4 +32,9 @@ export default {
     outline: 1px solid grey;
   }
 }
+
+.smPoster{
+  height: 6rem;
+}
+
 </style>
